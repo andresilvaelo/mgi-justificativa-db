@@ -59,7 +59,7 @@ ALTER TABLE justif_classif DROP CONSTRAINT JUSTIF_CLASSIF_PK;
 DROP INDEX JUSTIF_CLASSIF_PK;
 ALTER TABLE justif_classif ADD CONSTRAINT JUSTIF_CLASSIF_PK PRIMARY KEY (empcod, dat_anomes, prjcod, cod_classif, tipo_justificativa, tipo_orcamento);
 
-insert into CLASSIF_JUSTIF values (12,'Não Orçado (-)','-','I',to_date('10/05/2017'),'t_antoniojunior',null,null,null,null);
+insert into CLASSIF_JUSTIF values (12,'Nï¿½o Orï¿½ado (-)','-','I',to_date('10/05/2017'),'t_antoniojunior',null,null,null,null);
 insert into CLASSIF_JUSTIF values (13,'Sem Variacao','-','I',to_date('10/05/2017'),'t_antoniojunior',null,null,'SVAR',null);
 commit;
 
@@ -106,65 +106,73 @@ set des_classif_abrev = 'REEN' -- REEN
 where cod_classif = 10;
 
 update classif_justif
-set des_classif_abrev = 'ALOC' -- ALORC
+set des_classif_abrev = 'ALOC', -- ALORC
+    sit_classif = 'A'
 where cod_classif = 11;
 
 update classif_justif
-set des_classif_abrev = 'NOOR' -- NOOR
+set des_classif_abrev = 'NOOR', -- NOOR
+    sit_classif = 'A'
 where cod_classif = 12;
 commit;
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Economia'
+set des_classif_abrev = 'SVAR', -- SVAR
+    sit_classif = 'A'
+where cod_classif = 13;
+commit;
+
+update classif_justif
+set texto_padrao_classif = 'Justificativa automï¿½tica Economia'
 where cod_classif = 1;
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Cancelamento'
+set texto_padrao_classif = 'Justificativa automï¿½tica Cancelamento'
 where cod_classif = 2;
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Postergação'
+set texto_padrao_classif = 'Justificativa automï¿½tica Postergaï¿½ï¿½o'
 where cod_classif = 3;
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Gasto já executado'
+set texto_padrao_classif = 'Justificativa automï¿½tica Gasto jï¿½ executado'
 where cod_classif = 4;
 
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Reclassificação Saída'
+set texto_padrao_classif = 'Justificativa automï¿½tica Reclassificaï¿½ï¿½o Saï¿½da'
 where cod_classif = 5;
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Orçamento Extra'
+set texto_padrao_classif = 'Justificativa automï¿½tica Orï¿½amento Extra'
 where cod_classif = 6;
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Antecipação'
+set texto_padrao_classif = 'Justificativa automï¿½tica Antecipaï¿½ï¿½o'
 where cod_classif = 7;
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Gasto atrasado'
+set texto_padrao_classif = 'Justificativa automï¿½tica Gasto atrasado'
 where cod_classif = 8;
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Sobrecusto'
+set texto_padrao_classif = 'Justificativa automï¿½tica Sobrecusto'
 where cod_classif = 9;
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Reclassificação entrada'
+set texto_padrao_classif = 'Justificativa automï¿½tica Reclassificaï¿½ï¿½o entrada'
 where cod_classif = 10;
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Além do Orçado'
+set texto_padrao_classif = 'Justificativa automï¿½tica Alï¿½m do Orï¿½ado'
 where cod_classif = 11;
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Não Orçado'
+set texto_padrao_classif = 'Justificativa automï¿½tica Nï¿½o Orï¿½ado'
 where cod_classif = 12;
 
 update classif_justif
-set texto_padrao_classif = 'Justificativa automática Sem Variação'
+set texto_padrao_classif = 'Justificativa automï¿½tica Sem Variaï¿½ï¿½o'
 where cod_classif = 13;
 commit;
 
